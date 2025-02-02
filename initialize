@@ -1,0 +1,21 @@
+import UIKit
+import RealityKit
+import RoomPlan
+
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var arView: ARView!
+    private var visualizer: Visualizer?
+    
+    lazy var captureSession: RoomCaptureSession = {
+        let captureSession = RoomCaptureSession()
+        arView.session = captureSession.arSession
+        return captureSession
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        captureSession.delegate = self // Need to extend RoomCaptureSessionDelegate
+    }
+    
+}
