@@ -1,0 +1,22 @@
+class ViewController: UIViewController {
+    
+    private var roomCaptureView: RoomCaptureView?
+    private let roomCaptureSessionConfig = RoomCaptureSession.Configuration()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let roomCaptureView = RoomCaptureView(frame: view.bounds)
+        view.insertSubview(roomCaptureView, at: 0)
+        self.roomCaptureView = roomCaptureView
+        startSession()
+    }
+    
+    private func startSession() {
+        roomCaptureView?.captureSession.run(configuration: roomCaptureSessionConfig)
+    }
+    
+    private func stopSession() {
+        roomCaptureView?.captureSession.stop()
+    }
+    
+}
