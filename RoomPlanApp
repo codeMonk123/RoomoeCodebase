@@ -1,0 +1,26 @@
+//
+//  ForReal_DemoApp.swift
+//  ForReal Demo
+//
+//  CAuthor - bhushan
+//
+
+import SwiftUI
+import SwiftData
+import RoomPlan
+
+@main
+struct Room_PlanApp: App {
+    @StateObject private var roomCaptureController = RoomCaptureController()
+    
+    init() {
+        _ = RoominatorFileManager.shared
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environment(roomCaptureController)
+        }
+    }
+}
