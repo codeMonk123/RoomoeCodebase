@@ -1,2 +1,2 @@
-# RoomoeCodebase
-Roomie ios code
+# Roomee Codebase
+Roomee ios code
